@@ -1,58 +1,35 @@
 # RARA Dining In Night 2026
 
-A responsive Khmer/English invitation with personalized guest links, the RARA biography, and background music.
+A Khmer and English invitation for RARA Dining In Night 2026.
 
 - Date: 17 December 2026
 - Venue: Hyatt Regency Phnom Penh
 - Dress: Business Formal
 - Arrival time and programme: to be announced
-- RSVP: intentionally blank
+- RSVP: blank
 
-## Publish
+## Public invitation
 
-In repository Settings > Pages, choose **GitHub Actions** as the source. The included workflow publishes the `site` directory when changes are pushed to `main`. If the first workflow ran before Pages was enabled, run it again from the Actions tab.
-
-Expected website address after successful publication:
 https://rara-git-hub.github.io/DIN2026/
 
-Guest link maker:
+## Create guest invitations
+
 https://rara-git-hub.github.io/DIN2026/organizer.html
 
-## Personalize
+Enter a guest name and optional position to make a personal link. For a whole guest list, paste one name per line, or import an Excel workbook using the included template layout: name in column B, rank in C, position in D. The workbook is read in your browser and is not uploaded to GitHub. Review the names and positions before generating the links. Importing a new workbook replaces the current list in the page. Already sent links retain their original name and position.
 
-Open the link maker, enter the guest's name (including honorific) in Khmer or English, optionally add a position, and create a link. Preview the invitation and copy the link.
+Three accompanying-guest rows in the supplied list have no individual names. Those entries are flagged for review. The planning label VVIP is omitted from salutations. Existing C status marks are not treated as 2026 confirmations. Seating-plan cells and host notes are not imported.
 
-For a batch, paste one guest per line. Use `Name | Position` for an optional second line. Download the links as CSV.
+Guest names appear in invitation URLs. They are editable personalizations, not admission credentials. The website stores no guest list or RSVP responses. Do not commit the private guest-list workbook or the separate guest-link sheet to this public repository.
 
-Names are URL parameters, not confidential guest records or admission credentials. Recipients can edit them. No guest list or RSVP responses are stored on the server.
+## Invitation features
 
-## Music
+- Background music starts after a guest opens the invitation, with a visible pause/resume control.
+- The supplied track is about five seconds long and loops.
+- The original eight-page Khmer RARA biography is available in an on-page reader and PDF.
+- The date can be added to a calendar as an all-day reminder because the arrival time is pending.
+- An included GitHub Actions workflow publishes the repository root to Pages on pushes to `main`.
 
-The user-supplied track starts after tapping **Open your invitation**. A visible button pauses or resumes it. It loops at 35% volume. Browsers may require an additional tap to start playback.
+The 2024 sample's date, named recipient and schedule are not presented as 2026 details. Biography member roles are shown as supplied, not checked for current accuracy.
 
-## Files
-
-- `site/index.html`: invitation content and event details
-- `site/style.css`: design and responsive layout
-- `site/app.js`: guest names, biography pages, music
-- `site/organizer.html` and `site/organizer.js`: single and batch guest links
-- `site/rara-2026.ics`: all-day calendar reminder (arrival time is not confirmed)
-- `site/assets/`: original crest, alumni photographs, biography pages/PDF, supplied music
-
-The 2024 sample's date, named recipient and programme are not presented as 2026 information. Biography member roles are reproduced as recorded in the supplied document.
-
-## Local preview
-
-Serve the `site` directory with a static web server, or open `site/index.html` directly. Use the hosted link maker for links to share with guests; local previews create local links.
-
-No build tools or external runtime dependencies are required.
-
-## Update the guest list
-
-On the organizer page, choose an updated Excel file under **Import or replace an Excel guest list**. The file is read only on your device. It is not uploaded or committed to GitHub. Select the worksheet if there are several, review the imported names and titles, and create/download new links.
-
-The supplied layout uses column B for name, C for rank, and D for position. Seating cells and host-officer notes are ignored. The planning suffix VVIP is omitted from the invitation salutation. Accompanying-guest placeholders are retained for review. Old status marks are not treated as confirmations for 2026.
-
-Existing sent links keep their embedded name and title. After correcting a name or title, send a newly generated link. General event-page updates apply to every link.
-
-Spreadsheet import uses a vendored SheetJS Community Edition 0.20.3 reader; see `site/vendor/SheetJS-LICENSE.txt`.
+Spreadsheet import uses the vendored SheetJS Community Edition 0.20.3 script. See `vendor/SheetJS-LICENSE.txt`.
